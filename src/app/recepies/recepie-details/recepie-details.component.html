@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar *ngFor="let i of recepie">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/recepies"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{i.title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngFor="let item of recepie">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-img [src]="item.imageUrl"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="title-text">{{item.title}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>{{item.description}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text class="text-ingredients">Ingredients</ion-text>
+        <ul *ngFor="let i of item.ingredients">
+          <li>{{i}}</li>
+        </ul>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

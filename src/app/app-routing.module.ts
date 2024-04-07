@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RecepiesComponent } from './recepies/recepies.component';
+import { RecepieDetailsComponent } from './recepies/recepie-details/recepie-details.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'recepies',
     pathMatch: 'full'
   },
+  {
+    path:'recepies',
+    component: RecepiesComponent
+  },
+  {
+    path: 'recepies/:recepieId',
+    component: RecepieDetailsComponent
+  }
 ];
 
 @NgModule({

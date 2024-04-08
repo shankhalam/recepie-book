@@ -19,7 +19,7 @@ export class RecepieService {
     {
       id: '2',
       title: 'Chicken Fry',
-      imageUrl: 'https://www.archanaskitchen.com/images/archanaskitchen/1-Author/KarthikaKrishnan/Kongunad_Chicken_Fry.jpg',
+      imageUrl: 'https://c.ndtvimg.com/2021-12/0qqp966g_chicken-majestic_625x300_01_December_21.jpg',
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
       ingredients: ['Chicken', 'Oil']
     }
@@ -30,7 +30,13 @@ export class RecepieService {
   }
 
   getRecepie(id:string) : Recepie | any{
-    return [this.recepies.find(recepies => recepies.id === id)]
+    return [this.recepies.find(recepie => recepie.id === id)]
   }
+
+  deleteRecepie(id:string) : Recepie | any {
+    this.recepies = this.recepies.filter(recepie => {
+      return recepie.id !== id;
+    })
+  }  
 
 }

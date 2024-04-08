@@ -1,15 +1,20 @@
 <ion-header>
-  <ion-toolbar *ngFor="let i of recepie">
+  <ion-toolbar *ngFor="let i of newRecepie">
     <ion-buttons slot="start">
       <ion-back-button default-href="/recepies"></ion-back-button>
     </ion-buttons>
     <ion-title>
       {{i.title}}
     </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onDelete()">
+        <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngFor="let item of recepie">
+<ion-content *ngFor="let item of newRecepie">
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -31,4 +36,6 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-alert></ion-alert>
 </ion-content>

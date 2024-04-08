@@ -17,18 +17,18 @@
 <ion-content *ngFor="let item of newRecepie">
   <ion-grid>
     <ion-row>
-      <ion-col>
+      <ion-col size-lg="6" offset-lg="3">
         <ion-img [src]="item.imageUrl"></ion-img>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="title-text">{{item.title}}</ion-col>
+      <ion-col class="title-text" size-lg="6" offset-lg="3">{{item.title}}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>{{item.description}}</ion-col>
+      <ion-col size-lg="6" offset-lg="3">{{item.description}}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col size-lg="6" offset-lg="3">
         <ion-text class="text-ingredients">Ingredients</ion-text>
         <ul *ngFor="let i of item.ingredients">
           <li>{{i}}</li>
